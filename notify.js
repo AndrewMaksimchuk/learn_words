@@ -25,5 +25,3 @@ if (ok) {
     const learn = new Notify.Notification(notify);
     learn.show();
 }
-
-
