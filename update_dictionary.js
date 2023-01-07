@@ -5,7 +5,14 @@ const { add2json } = require("./add2json");
 const { save2json } = require("./save2json");
 const { obj2string } = require("./obj2string");
 
-const csv = csv2json();
-const json = add2json(csv);
-const data = obj2string(json);
-save2json(data);
+try {
+    const csv = csv2json();
+    const json = csv && add2json(csv);
+    const data = json && obj2string(json);
+    data 
+        ? save2json(data)
+        : process.stdout.write("Nothing to add.\nCheck if \"words\" file exist and is not empty.\n");    
+}
+catch (error) {
+    process.stderr.write("Error is happened");
+}
