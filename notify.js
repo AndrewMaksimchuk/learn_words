@@ -1,9 +1,11 @@
-#!/usr/bin/env gjs
+#!/bin/gjs
 
 const GLib = imports.gi.GLib;
 const Notify = imports.gi.Notify;
 
-const [ok, contents] = GLib.file_get_contents("dictionary.json");
+const file = "/home/andrew/Code/learn_words/dictionary.json";
+
+const [ok, contents] = GLib.file_get_contents(file);
 
 if (ok) {
     const utf8decoder = new TextDecoder();
