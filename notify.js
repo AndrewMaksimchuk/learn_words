@@ -16,7 +16,7 @@ if (ok) {
     const wordIndex = Math.floor(Math.random() * dictionaryLength);
     const word = map[wordIndex];
 
-    Notify.init("learn");
+    Notify.init("message");
 
     const notify = {
         summary: word.summary,
@@ -24,6 +24,6 @@ if (ok) {
         "icon-name": "dialog-information"
     }
 
-    const learn = new Notify.Notification(notify);
-    learn.show();
+    const message = new Notify.Notification(notify);
+    message.show();
 }

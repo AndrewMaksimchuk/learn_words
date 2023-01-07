@@ -5,9 +5,6 @@ const maped = (value) => {
     return { summary, body: body.toString().replaceAll(",", ", ") };
 }
 
-const cvs2json = (file = "words") => {
-    const data = readFileSync(file);
-    return data.toString().split("\n").map(maped);
-}
+const csv2json = (file = "words") => readFileSync(file).toString().split("\n").map(maped);
 
-module.exports = { cvs2json }
+module.exports = { csv2json }
