@@ -3,7 +3,8 @@
 const GLib = imports.gi.GLib;
 const Notify = imports.gi.Notify;
 
-const file = "/home/andrew/Code/learn_words/dictionary.json";
+const filename = "dictionary.json";
+const file = GLib.build_filenamev([GLib.get_current_dir(), filename]);
 
 const [ok, contents] = GLib.file_get_contents(file);
 
