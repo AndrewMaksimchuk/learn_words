@@ -36,3 +36,7 @@ afterwards згодом
 
 `./run.sh &` - run application in background process. Application repeat each 15 minutes.   
 `kill %1` - terminate background process, when number 1 is a process number that return in terminal after running previus command.  
+
+For write "words" file, is made possible use gui application.  
+Run `./gui.js`.  
+![gui application](gui.png)
