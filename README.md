@@ -40,3 +40,6 @@ afterwards згодом
 For write "words" file, is made possible use gui application.  
 Run `./gui.js`.  
 ![gui application](gui.png)
+
+For update one word from terminal use:  
+`./updateWord.js enveriable "навколишнє середовище"`  
