@@ -1,9 +1,12 @@
 #!/usr/bin/env gjs
 
 imports.gi.versions.Gtk = "3.0";
-const { Gtk, Gio } = imports.gi;
+const { Gtk, Gio, GLib } = imports.gi;
+const ByteArray = imports.byteArray;
 
+const currentDir = GLib.get_current_dir();
 const file = Gio.File.new_for_path("words");
+const updateDictionary = GLib.build_filenamev([currentDir, "update_dictionary.js"]);
 const outputStream = file.append_to(Gio.FileCreateFlags. REPLACE_DESTINATION, null);
 
 Gtk.init(null);
@@ -45,10 +48,21 @@ buttonUpdate.connect('clicked', () => {
     win.set_focus(entryUpdate);
 });
 
+const buttonSave = new Gtk.Button({ label: 'Save' });
+buttonSave.connect('clicked', () => {
+    let [, stdout, stderr, status] = GLib.spawn_command_line_sync(updateDictionary);
+    if (status === 0) {
+        statusBar.push(0, `Словник оновлено!`);
+    } else {
+        statusBar.push(0, `Статус ${status}. Сталася помилка у скрипті оновлення словника.`);
+    }
+});
+
 box.add(entry);
 box.add(button);
 box.add(entryUpdate);
 box.add(buttonUpdate);
+box.add(buttonSave);
 box.add(statusBar);
 
 const win = new Gtk.Window({ defaultWidth: 500 });
