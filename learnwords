@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+dir=$(dirname $0)
+
+if [ $# -eq 0 ]; then
+    gjs -m "$dir/notify.js"
+    exit
+fi
+
+case $1 in 
+    "run") 
+        "$dir/run.bash" &
+    ;;
+
+    "update") 
+        "$dir/update_dictionary.js"
+    ;;
+
+    *) 
+        echo "That command not exist"
+    ;; 
+esac

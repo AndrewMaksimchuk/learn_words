@@ -1,31 +1,35 @@
-#!/bin/gjs
+#!/bin/gjs -m
 
-const GLib = imports.gi.GLib;
-const Notify = imports.gi.Notify;
-const ByteArray = imports.byteArray;
+
+import GLib from 'gi://GLib';
+import Notify from "gi://Notify"
+import system from "system";
+
+
+const project_dir = GLib.path_get_dirname(import.meta.url).slice(7);
+
 
 function extensionChangeText(text) {
     // If you have extension "Simple Message"
-    // https://github.com/freddez/gnome-shell-simple-message
     // this function push new text to him
-    try {
-        const filename = "extension.sh";
-        const file = GLib.build_filenamev([GLib.get_current_dir(), filename]);
-        const [, , stderr, status] = GLib.spawn_command_line_sync(`${file} "${text}"`);
-
-        if (status !== 0) {
-            if (stderr instanceof Uint8Array)
-                throw new Error(ByteArray.toString(stderr));
-        }
-    } catch (e) {
-        logError(e);
-    }
+    const command = 'dconf write ' 
+    + '/org/gnome/shell/extensions/simple-message/message'
+    + ` '"${text}"'`;
+    GLib.spawn_command_line_sync(command);
 }
 
+
 const filename = "dictionary.json";
-const file = GLib.build_filenamev([GLib.get_current_dir(), filename]);
+const file = GLib.build_filenamev([project_dir, filename]);
+
+
+if (GLib.access(file, "R_OK") !== 0) {
+    system.exit(1);
+}
+
 
 const [ok, contents] = GLib.file_get_contents(file);
+
 
 if (ok) {
     const utf8decoder = new TextDecoder();

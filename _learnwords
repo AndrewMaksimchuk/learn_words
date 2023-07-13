@@ -1,0 +1,10 @@
+#compdef learnwords
+# Add competion for shell(zsh)
+
+
+local -a subcmds
+subcmds=(
+    'run:Show notification' 
+    'update:Add new words to dictionary' 
+)
+_describe 'command' subcmds

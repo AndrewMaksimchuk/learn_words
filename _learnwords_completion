@@ -1,0 +1,15 @@
+# Add competion for shell(bash)
+
+
+function _learnwords() {
+    COMPREPLY=(
+        "add" 
+        "read" 
+        "rn" 
+        "current" 
+        "rc" 
+    )
+}
+
+
+complete -F _learnwords learnwords
