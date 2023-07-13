@@ -1,3 +1,6 @@
 #!/usr/bin/env sh
 
-while true; do ./notify.js; sleep 5m; done
+dir=$(dirname $0)
+file=$(echo "$dir/notify.js")
+
+while true; do $file; sleep 5m; done

@@ -34,7 +34,7 @@ afterwards згодом
 `make run` - show one notification message.    
 `make update` - get "words" file content and add to "dictionary.json" file with transformation that needed.  
 
-`./run.sh &` - run application in background process. Application repeat each 15 minutes.   
+`./run.sh &` - run application in background process. Application repeat each 5 minutes.   
 `kill %1` - terminate background process, when number 1 is a process number that return in terminal after running previus command.  
 
 For write "words" file, is made possible use gui application.  
@@ -43,3 +43,7 @@ Run `./gui.js`.
 
 For update one word from terminal use:  
 `./updateWord.js enveriable "навколишнє середовище"`  
+
+If you have "Simple Message" extension,  
+this application push to him text to show.  
+Details in `extensionChangeText` function.  
