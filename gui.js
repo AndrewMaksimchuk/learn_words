@@ -15,11 +15,13 @@ const box = new Gtk.Box({ orientation: Gtk.Orientation.VERTICAL, spacing: 15 });
 box.set_border_width(15)
 
 const entry = new Gtk.Entry({
-    buffer: new Gtk.EntryBuffer()
+    buffer: new Gtk.EntryBuffer(),
+    placeholder_text: "Enter new word",
 });
 
 const entryUpdate = new Gtk.Entry({
-    buffer: new Gtk.EntryBuffer()
+    buffer: new Gtk.EntryBuffer(),
+    placeholder_text: "Enter word for change",
 });
 
 const statusBar = new Gtk.Statusbar();
@@ -31,7 +33,7 @@ button.connect('clicked', () => {
 
     outputStream.write(`\n${inputText}`, null);
     
-    statusBar.push(0, `У словник додано: ${inputText}`);
+    statusBar.push(0, `Added to dictionary: ${inputText}`);
     entry.set_text("");
     win.set_focus(entry);
 });
@@ -43,7 +45,7 @@ buttonUpdate.connect('clicked', () => {
 
     outputStream.write(`\n${inputText}`, null);
     
-    statusBar.push(0, `Оновлено слово: ${inputText}`);
+    statusBar.push(0, `Dictionary updated: ${inputText}`);
     entryUpdate.set_text("");
     win.set_focus(entryUpdate);
 });
@@ -52,9 +54,9 @@ const buttonSave = new Gtk.Button({ label: 'Save' });
 buttonSave.connect('clicked', () => {
     let [, stdout, stderr, status] = GLib.spawn_command_line_sync(updateDictionary);
     if (status === 0) {
-        statusBar.push(0, `Словник оновлено!`);
+        statusBar.push(0, `Dictionary updated!`);
     } else {
-        statusBar.push(0, `Статус ${status}. Сталася помилка у скрипті оновлення словника.`);
+        statusBar.push(0, `Status ${status}. An error occurred in the dictionary update script.`);
     }
 });
 
