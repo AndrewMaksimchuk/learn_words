@@ -16,6 +16,10 @@ case $1 in
         "$dir/update_dictionary.js"
     ;;
 
+    "open") 
+        "$dir/gui.js"
+    ;;
+
     *) 
         echo "That command not exist"
     ;; 

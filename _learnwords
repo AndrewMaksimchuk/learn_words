@@ -6,5 +6,6 @@ local -a subcmds
 subcmds=(
     'run:Show notification' 
     'update:Add new words to dictionary' 
+    'open:Run gui' 
 )
 _describe 'command' subcmds

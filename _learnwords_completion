@@ -3,11 +3,9 @@
 
 function _learnwords() {
     COMPREPLY=(
-        "add" 
-        "read" 
-        "rn" 
-        "current" 
-        "rc" 
+        "run" 
+        "update" 
+        "open"        
     )
 }
 

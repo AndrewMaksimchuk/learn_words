@@ -1,12 +1,16 @@
-#!/usr/bin/env gjs
+#!/usr/bin/env -S gjs -m
 
-imports.gi.versions.Gtk = "3.0";
-const { Gtk, Gio, GLib } = imports.gi;
-const ByteArray = imports.byteArray;
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
+import Gtk from 'gi://Gtk?version=3.0';
 
-const currentDir = GLib.get_current_dir();
-const file = Gio.File.new_for_path("words");
+const [filename] = GLib.filename_from_uri(import.meta.url);
+const currentDir = GLib.path_get_dirname(filename);
+
 const updateDictionary = GLib.build_filenamev([currentDir, "update_dictionary.js"]);
+
+const filepath = GLib.build_filenamev([currentDir, "words"]);
+const file = Gio.File.new_for_path(filepath);
 const outputStream = file.append_to(Gio.FileCreateFlags. REPLACE_DESTINATION, null);
 
 Gtk.init(null);
@@ -68,7 +72,7 @@ box.add(buttonSave);
 box.add(statusBar);
 
 const win = new Gtk.Window({ defaultWidth: 500 });
-win.set_title("Learn words | Add new word");
+win.set_title("Learn words");
 win.connect('destroy', () => {
     outputStream.close(null);
     Gtk.main_quit();

@@ -44,6 +44,7 @@ afterwards згодом
 `update` - get "words" file content and add to  
 "dictionary.json" file with transformation that  
 needed.  
+`open` - run gui  
 
 `./run.bash &` - run application in background  
 process. Application repeat each 5 minutes.   
