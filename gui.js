@@ -7,7 +7,9 @@ import Gtk from 'gi://Gtk?version=3.0';
 const [filename] = GLib.filename_from_uri(import.meta.url);
 const currentDir = GLib.path_get_dirname(filename);
 
-const updateDictionary = GLib.build_filenamev([currentDir, "update_dictionary.js"]);
+const updateDictionary = GLib.build_filenamev(
+    [currentDir, "update_dictionary.js"]
+);
 
 const filepath = GLib.build_filenamev([currentDir, "words"]);
 const file = Gio.File.new_for_path(filepath);
@@ -30,7 +32,7 @@ const entryUpdate = new Gtk.Entry({
 
 const statusBar = new Gtk.Statusbar();
 
-const button = new Gtk.Button({ label: 'Add to dictionary!' });
+const button = new Gtk.Button({ label: 'Add to dictionary' });
 button.connect('clicked', () => {
     const inputText = entry.get_buffer().text;
     if (Boolean(inputText) === false) return;
@@ -42,7 +44,7 @@ button.connect('clicked', () => {
     win.set_focus(entry);
 });
 
-const buttonUpdate = new Gtk.Button({ label: 'Update word!' });
+const buttonUpdate = new Gtk.Button({ label: 'Update word' });
 buttonUpdate.connect('clicked', () => {
     const inputText = entryUpdate.get_buffer().text;
     if (Boolean(inputText) === false) return;
@@ -54,9 +56,9 @@ buttonUpdate.connect('clicked', () => {
     win.set_focus(entryUpdate);
 });
 
-const buttonSave = new Gtk.Button({ label: 'Save' });
+const buttonSave = new Gtk.Button({ label: 'Update dictionary itself' });
 buttonSave.connect('clicked', () => {
-    let [, stdout, stderr, status] = GLib.spawn_command_line_sync(updateDictionary);
+    let [, , , status] = GLib.spawn_command_line_sync(updateDictionary);
     if (status === 0) {
         statusBar.push(0, `Dictionary updated!`);
     } else {

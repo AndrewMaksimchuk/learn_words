@@ -2,11 +2,21 @@ const { readFileSync, existsSync } = require("fs");
 const { join } = require("path");
 
 const maped = (value) => {
-    const [summary, ...body] = value.split(" ");
-    return { summary, body: body.toString().replaceAll(",", ", ") };
+  const [summary, ...rest] = value.split(" ");
+  const body = rest
+    .toString()
+    .replaceAll(",", ", ");
+  return { summary, body, };
 }
 
-const csv2json = (file = "words") => existsSync(join(__dirname, file))
-    && readFileSync(file).toString().split("\n").map(maped);
+const csv2json = (file = "words") => {
+  const pathtofile = join(__dirname, file);
+  return (
+    existsSync(pathtofile) &&
+    readFileSync(pathtofile)
+      .toString()
+      .split("\n")
+      .map(maped));
+}
 
 module.exports = { csv2json }
