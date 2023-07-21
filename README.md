@@ -46,8 +46,9 @@ afterwards згодом
 needed.  
 `open` - run gui  
 
-`./run.bash &` - run application in background  
-process. Application repeat each 5 minutes.   
+`./learn_words.bash &` - run application in  
+background process. Application repeat each 5  
+minutes.  
 `kill %1` - terminate background process, when  
 number 1 is a process number that return in  
 terminal after running previus command.  

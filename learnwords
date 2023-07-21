@@ -1,15 +1,20 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 dir=$(dirname $0)
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
     gjs -m "$dir/notify.js"
     exit
 fi
 
 case $1 in 
     "run") 
-        "$dir/run.bash" &
+        check=$(ps -x | grep "learn_words.bash" | wc -l)
+        if [[ $check -ge 2 ]]; then
+            echo "The process is already running"
+            exit
+        fi
+        "$dir/learn_words.bash" &
     ;;
 
     "update") 
