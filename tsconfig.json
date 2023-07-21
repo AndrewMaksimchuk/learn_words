@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+    },
+    "include": ["@girs/gtk-3.0"],
+    "exclude": []
+}
