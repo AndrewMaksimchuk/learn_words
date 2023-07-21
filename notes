@@ -1,7 +1,34 @@
+Imports
+
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
+import Gtk from 'gi://Gtk?version=3.0';
+
+
 https://gjs-docs.gnome.org/javascript
 https://gjs-docs.gnome.org/gjs/esmodules.md#built-in-modules
 https://gitlab.gnome.org/GNOME/gjs/tree/HEAD/examples
-https://gjs-docs.gnome.org/gtk30~3.0
 https://gjs-docs.gnome.org/gtk40~4.0
 https://docs.gtk.org/glib/index.html
 https://docs.gtk.org/gio/index.html
+https://gjs-docs.gnome.org/gtk30~3.0
+
+
+Components
+
+https://gjs-docs.gnome.org/gtk30~3.0/gtk.listbox
+https://gjs-docs.gnome.org/gtk30~3.0/gtk.listbox#method-insert
+
+
+Types
+
+https://github.com/gjsify/ts-for-gir
+https://github.com/gjsify/types/tree/main/gjs
+https://github.com/gjsify/types/tree/main/gtk-3.0
+
+
+Description
+
+https://www.gtk.org/docs/apis/
+https://gitlab.gnome.org/GNOME/gjs/-/tree/master/doc
+https://gjs-docs.gnome.org/gtk30~3.0/gtk.window#method-set_icon
