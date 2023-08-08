@@ -2,7 +2,8 @@
 import Gtk from 'gi://Gtk?version=3.0';
 import {
   updateDictionary,
-  outputStream
+  outputStream,
+  currentDir,
 } from "./variables.js";
 import { createBox } from './gui/components/box.js';
 import { createEntryLabel } from './gui/components/entryLabel.js';
@@ -21,6 +22,7 @@ import { createBoxFirstLine } from './gui/components/boxFirstLine.js';
 Gtk.init(null);
 const win = createWin({
   outputStream,
+  currentDir,
 })
 const entryLabel = createEntryLabel()
 const entry = createEntry()
