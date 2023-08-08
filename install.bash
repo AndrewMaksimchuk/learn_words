@@ -38,3 +38,6 @@ addcompletion
 
 execfiles=$(echo $cwd/*.bash)
 chmod +x $execfiles
+
+
+$cwd/install_desktop_entry.bash

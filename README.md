@@ -4,10 +4,11 @@
 
 For first time run in this directory in terminal  
 `sudo ./install.bash` for add path to this  
-application in global scope and add shell  
-complition to.  
+application in global scope, add desktop entry  
+and add shell complition to.  
 
 After that you can run "learnwords" in terminal.  
+Or run from desktop menu.
 
 ### dictionary.json
 ```
