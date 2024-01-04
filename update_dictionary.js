@@ -11,6 +11,10 @@ const errMsg = `Nothing to add.
 Check if "words" file exist and is not empty.
 `;
 
+const printUpdates = (csv = []) => {
+  process.stdout.write(`[ INFO ] Dictionary update with ${csv.length} words\n`);
+}
+
 if(!existsSync(join(__dirname, "words"))) {
   process.stdout.write(errMsg);
 }
@@ -20,5 +24,5 @@ const json = csv && add2json(csv);
 const data = json && obj2string(json);
 
 data 
-    ? save2json(data)
+    ? (save2json(data), printUpdates(csv))
     : process.stdout.write(errMsg);

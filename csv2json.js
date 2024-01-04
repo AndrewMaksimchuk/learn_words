@@ -1,8 +1,25 @@
 const { readFileSync, existsSync } = require("fs");
 const { join } = require("path");
 
-const maped = (value) => {
-  const [summary, ...rest] = value.split(" ");
+const accumulator = [];
+
+const normalize = (value) => {
+  return value.trim().toLowerCase();
+}
+
+const accumulatorPush = (text) => {
+  accumulator.push(text);
+  return true;
+}
+
+const removeDuplicates = (row) => {
+  const [ summary, ] = row.split(" ");
+  const normSummary = normalize(summary);
+  return accumulator.includes(normSummary) ? false : accumulatorPush(normSummary);
+}
+
+const maped = (row) => {
+  const [summary, ...rest] = row.split(" ");
   const body = rest
     .toString()
     .replaceAll(",", ", ");
@@ -14,8 +31,10 @@ const csv2json = (file = "words") => {
   return (
     existsSync(pathtofile) &&
     readFileSync(pathtofile)
-      .toString()
+      .toString('utf8')
       .split("\n")
+      .filter(Boolean)
+      .filter(removeDuplicates)
       .map(maped));
 }
 
