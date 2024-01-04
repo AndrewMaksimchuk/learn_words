@@ -17,7 +17,7 @@ import { createButtonSave } from './gui/components/buttonSave.js';
 import { createButtonClose } from './gui/components/buttonClose.js';
 import { createWin } from './gui/components/win.js';
 import { createBoxFirstLine } from './gui/components/boxFirstLine.js';
-
+import { createHeaderBar } from "./gui/components/headerBar.js";
 
 Gtk.init(null);
 const win = createWin({
@@ -48,6 +48,8 @@ const buttonSave = createButtonSave({
 const buttonClose = createButtonClose({
   outputStream,
 })
+const header = createHeaderBar();
+
 const box = createBox([
   entryLabel,
   entry,
@@ -58,6 +60,13 @@ const box = createBox([
   buttonSave,
   statusBar,
 ])
-win.add(box);
+
+const boxMain = createBox([
+  header,
+  box,
+]);
+boxMain.set_border_width(0);
+
+win.add(boxMain);
 win.show_all();
 Gtk.main();

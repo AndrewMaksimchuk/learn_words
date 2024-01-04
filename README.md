@@ -66,3 +66,11 @@ If you have
 [Simple Message](https://github.com/freddez/gnome-shell-simple-message) 
 extension this application push to him text to show.  
 Details in `extensionChangeText` function.  
+
+### GUI
+
+Build on GTK3 and GJS
+
+#### GUI Resources
+
+- https://gjs-docs.gnome.org/gtk30~3.0/
