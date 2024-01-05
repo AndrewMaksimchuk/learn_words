@@ -1,6 +1,17 @@
 {
     "compilerOptions": {
+        "strict": true,
+        "allowJs": true,
+        "target": "ES2022",
+        "baseUrl": ".",
+        "moduleResolution": "node",
+        "module": "ES2022",
+        "outDir": "_build",
+        "skipLibCheck": true,
+        "typeRoots": [
+            "gui/types"
+        ],
     },
-    "include": ["@girs/gtk-3.0"],
+    "include": ["gui.js", "gui/types/gi.d.ts", "gui/*"],
     "exclude": []
 }

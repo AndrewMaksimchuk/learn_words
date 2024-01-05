@@ -73,4 +73,9 @@ Build on GTK3 and GJS
 
 #### GUI Resources
 
+- https://gjs.guide/guides/
 - https://gjs-docs.gnome.org/gtk30~3.0/
+- https://rmnvgr.gitlab.io/gtk4-gjs-book/application/
+- https://gitlab.gnome.org/GNOME/gjs/tree/HEAD/examples
+- https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions/-/tree/eb2a87a25c5e2fb580b605fbec0bd312fe34c492
+- https://gitlab.gnome.org/World/vocalis
