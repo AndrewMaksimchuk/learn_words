@@ -24,3 +24,8 @@ export const outputStream = file.append_to(
   Gio.FileCreateFlags.REPLACE_DESTINATION,
   null
 )
+
+export const dictionaryFilePath = GLib.build_filenamev([
+  currentDir,
+  "dictionary.json"
+])

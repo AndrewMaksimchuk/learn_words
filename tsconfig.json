@@ -2,6 +2,7 @@
     "compilerOptions": {
         "strict": true,
         "allowJs": true,
+        "checkJs": true,
         "target": "ES2022",
         "baseUrl": ".",
         "moduleResolution": "node",
@@ -12,6 +13,6 @@
             "gui/types"
         ],
     },
-    "include": ["gui.js", "gui/types/gi.d.ts", "gui/*"],
+    "include": ["gui.js", "type.d.ts", "gui/types/gi.d.ts", "gui/*"],
     "exclude": []
 }
