@@ -9,12 +9,17 @@ import system from "system";
 const project_dir = GLib.path_get_dirname(import.meta.url).slice(7);
 
 
-function extensionChangeText(text) {
+function extensionChangeText(text = "") {
     // If you have extension "Simple Message"
     // this function push new text to him
+
+    const normalizeText = text
+      .trim()
+      .replaceAll("'", "`");
+
     const command = 'dconf write ' 
     + '/org/gnome/shell/extensions/simple-message/message'
-    + ` '"${text}"'`;
+    + ` '"${normalizeText}"'`;
     GLib.spawn_command_line_sync(command);
 }
 
