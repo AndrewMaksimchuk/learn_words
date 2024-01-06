@@ -11,8 +11,9 @@ After that you can run "learnwords" in terminal.
 Or run from desktop menu.
 
 ### dictionary.json
-```
-{
+```json
+[
+    {
         "summary": "thing",
         "body": "річ"
     },
@@ -28,11 +29,13 @@ Or run from desktop menu.
 ```
 
 ### words - csv format  
+
 Column name: "summary body"
 ```
 thing річ
 entirely повністю
 afterwards згодом
+homogeneous [ˌhōməˈjēnēəs] однорідний
 ```
 |summary   |body    |
 |----------|--------|
@@ -41,6 +44,7 @@ afterwards згодом
 |afterwards|згодом  |
 
 ### Commands  
+
 `run` - run application in background.    
 `update` - get "words" file content and add to  
 "dictionary.json" file with transformation that  

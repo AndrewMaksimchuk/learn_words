@@ -20,10 +20,8 @@ const removeDuplicates = (row) => {
 
 const maped = (row) => {
   const [summary, ...rest] = row.split(" ");
-  const body = rest
-    .toString()
-    .replaceAll(",", ", ");
-  return { summary, body, };
+  const body = rest.join(" ");
+  return { summary, body };
 }
 
 const csv2json = (file = "words") => {
