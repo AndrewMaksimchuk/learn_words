@@ -29,6 +29,11 @@ function addcompletion() {
 }
 
 
+function gui_build() {
+    $(cd $cwd && npm run tsc) 2>/dev/null
+}
+
+
 addpath ".bashrc"
 addpath ".zshrc"
 
@@ -41,3 +46,4 @@ chmod +x $execfiles
 
 
 $cwd/install_desktop_entry.bash
+gui_build

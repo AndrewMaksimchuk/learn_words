@@ -1,3 +1,4 @@
 words
 learnwords.desktop
 node_modules/
+gui/**/*.js

@@ -5,19 +5,19 @@ import {
   outputStream,
   currentDir,
 } from "./variables.js";
-import { createBox } from './gui/components/box.js';
-import { createEntryLabel } from './gui/components/entryLabel.js';
-import { createEntry } from './gui/components/entry.js';
-import { createEntryUpdateLabel } from './gui/components/entryUpdateLabel.js';
-import { createEntryUpdate } from './gui/components/entryUpdate.js';
-import { createStatusBar } from './gui/components/statusBar.js';
-import { createButton } from './gui/components/button.js';
-import { createButtonUpdate } from './gui/components/buttonUpdate.js';
-import { createButtonSave } from './gui/components/buttonSave.js';
-import { createButtonClose } from './gui/components/buttonClose.js';
-import { createWin } from './gui/components/win.js';
-import { createBoxFirstLine } from './gui/components/boxFirstLine.js';
-import { createHeaderBar } from "./gui/components/headerBar.js";
+import { createBox } from './components/box.js';
+import { createEntryLabel } from './components/entryLabel.js';
+import { createEntry } from './components/entry.js';
+import { createEntryUpdateLabel } from './components/entryUpdateLabel.js';
+import { createEntryUpdate } from './components/entryUpdate.js';
+import { createStatusBar } from './components/statusBar.js';
+import { createButton } from './components/button.js';
+import { createButtonUpdate } from './components/buttonUpdate.js';
+import { createButtonSave } from './components/buttonSave.js';
+import { createButtonClose } from './components/buttonClose.js';
+import { createWin } from './components/win.js';
+import { createBoxFirstLine } from './components/boxFirstLine.js';
+import { createHeaderBar } from "./components/headerBar.js";
 
 Gtk.init(null);
 const win = createWin({

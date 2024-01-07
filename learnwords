@@ -22,7 +22,19 @@ case $1 in
     ;;
 
     "open") 
-        "$dir/gui.js"
+        if [[ -e "$dir/gui/gui.js" ]]; then
+            chmod +x "$dir/gui/gui.js"
+            "$dir/gui/gui.js"
+        else
+            echo 'GUI app not exist, need build first'
+            echo 'Run command "npm run tsc" in project directory'
+        fi
+    ;;
+
+    "build")
+        echo 'Build gui application...'
+        $(cd $dir && npm run tsc) 2>/dev/null
+        echo 'Done'
     ;;
 
     *) 

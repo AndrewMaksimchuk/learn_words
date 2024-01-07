@@ -1,11 +1,15 @@
 import Gtk from 'gi://Gtk?version=3.0';
 import GLib from 'gi://GLib';
 
+interface Props {
+  updateDictionary: string
+  statusBar: Gtk.Statusbar
+}
 
 export const createButtonSave = ({
   updateDictionary,
   statusBar,
-}) => {
+}: Props) => {
   const buttonSave = new Gtk.Button({
     label: 'Update dictionary itself'
   });

@@ -3,6 +3,8 @@
     "@girs/gtk-3.0": "^3.24.38-3.2.0"
   },
   "scripts": {
-    "typecheck": "tsc --strict --noEmitOnError"
+    "tsc": "tsc --strict --noEmitOnError",
+    "rm": "rm -f ./gui/**/*.js ./gui/*.js",
+    "open": "chmod +x ./gui/gui.js && ./gui/gui.js"
   }
 }

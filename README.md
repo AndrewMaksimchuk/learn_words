@@ -60,7 +60,7 @@ terminal after running previus command.
 
 For write "words" file, is made possible use  
 gui application.  
-Run `./gui.js`.  
+Run `./gui/gui.js`.  
 ![gui application](gui.png)  
 
 For update one word from terminal use:  
@@ -73,7 +73,14 @@ Details in `extensionChangeText` function.
 
 ### GUI
 
-Build on GTK3 and GJS
+Base on GTK3, GJS and typesctipt  
+For build local gui app, run command `npm run tsc`  
+
+#### Require
+
+- GJS
+- Node.js
+- typescript(tsc)
 
 #### GUI Resources
 
@@ -84,3 +91,4 @@ Build on GTK3 and GJS
 - https://gitlab.gnome.org/GNOME/gjs/tree/HEAD/examples
 - https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions/-/tree/eb2a87a25c5e2fb580b605fbec0bd312fe34c492
 - https://gitlab.gnome.org/World/vocalis
+- https://zetcode.com/gui/gtk2/gtkevents/

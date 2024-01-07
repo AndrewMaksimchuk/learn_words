@@ -1,7 +1,8 @@
 import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk?version=3.0';
 import { DEFAULT_WIDTH, DEFAULT_HEIGHT, TITLE_DICTIONARY, SUMMARY_WIDTH_MAX } from './settings.js'
-import { dictionaryFilePath } from '../../variables.js';
+import { dictionaryFilePath } from '../variables.js';
+import type { Dictionary } from '../type.js';
 
 let win;
 let searchBar;
@@ -54,10 +55,10 @@ const readDictionary = () => {
   const [ok, contents] = dictionaryFile.load_contents(null);
   const utf8decoder = new TextDecoder();
   const str = utf8decoder.decode(contents)
-  return JSON.parse(str);
+  return JSON.parse(str) as Dictionary;
 }
 
-const dictionarySortFn = (row1, row2) => {
+const dictionarySortFn = (row1: Gtk.ListBoxRow, row2: Gtk.ListBoxRow) => {
   const text1 = row1.get_child()?.get_children()[0]?.get_text();
   const text2 = row2.get_child()?.get_children()[0]?.get_text();
   return Number(text1 > text2);

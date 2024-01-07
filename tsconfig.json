@@ -1,18 +1,19 @@
 {
     "compilerOptions": {
         "strict": true,
-        "allowJs": true,
-        "checkJs": true,
+        // "allowJs": true,
+        // "checkJs": true,
         "target": "ES2022",
         "baseUrl": ".",
         "moduleResolution": "node",
         "module": "ES2022",
-        "outDir": "_build",
+        // "outDir": "_build",
         "skipLibCheck": true,
+        "noImplicitAny": true,
         "typeRoots": [
             "gui/types"
         ],
     },
-    "include": ["gui.js", "type.d.ts", "gui/types/gi.d.ts", "gui/*"],
+    "include": ["gui/type.d.ts", "gui/types/gi.d.ts", "gui/*"],
     "exclude": []
 }

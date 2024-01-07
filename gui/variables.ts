@@ -5,8 +5,8 @@ import GLib from 'gi://GLib';
 export const [filename] = GLib
   .filename_from_uri(import.meta.url)
 
-export const currentDir = GLib
-  .path_get_dirname(filename)
+export const currentDir = GLib.build_pathv("/", [GLib
+  .path_get_dirname(filename), ".."]);
 
 export const updateDictionary = GLib
   .build_filenamev(

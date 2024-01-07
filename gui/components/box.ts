@@ -1,7 +1,7 @@
 import Gtk from 'gi://Gtk?version=3.0';
 
 
-export const createBox = (children = []) => {
+export const createBox = (children: Gtk.Widget[]) => {
   const box = new Gtk.Box({
     orientation: Gtk.Orientation.VERTICAL,
     spacing: 15
