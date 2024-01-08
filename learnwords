@@ -37,6 +37,10 @@ case $1 in
         echo 'Done'
     ;;
 
+    "add")
+        vi $dir/words
+    ;;
+
     *) 
         echo "That command not exist"
     ;; 

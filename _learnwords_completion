@@ -6,6 +6,8 @@ function _learnwords() {
         "run" 
         "update" 
         "open"        
+        "add"
+        "build"
     )
 }
 

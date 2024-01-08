@@ -7,5 +7,7 @@ subcmds=(
     'run:Show notification' 
     'update:Add new words to dictionary' 
     'open:Run gui' 
+    'add:Open editor with "words" file' 
+    'build:Build GUI application'
 )
 _describe 'command' subcmds
