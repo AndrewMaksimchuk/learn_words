@@ -20,9 +20,11 @@ import { createBoxFirstLine } from './components/boxFirstLine.js';
 import { createHeaderBar } from "./components/headerBar.js";
 
 Gtk.init(null);
+const titlebar = createHeaderBar();
 const win = createWin({
   outputStream,
   currentDir,
+  titlebar
 })
 const entryLabel = createEntryLabel()
 const entry = createEntry()
@@ -48,7 +50,6 @@ const buttonSave = createButtonSave({
 const buttonClose = createButtonClose({
   outputStream,
 })
-const header = createHeaderBar();
 
 const box = createBox([
   entryLabel,
@@ -62,7 +63,6 @@ const box = createBox([
 ])
 
 const boxMain = createBox([
-  header,
   box,
 ]);
 boxMain.set_border_width(0);
