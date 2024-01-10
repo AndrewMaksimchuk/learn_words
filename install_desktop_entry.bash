@@ -15,7 +15,7 @@ Categories=Education;"
 desktop_file="$projectdir/$file_name"
 
 echo "$file_content" > $desktop_file
-echo "Exec=$projectdir/learnwords" >> $desktop_file
+echo "Exec=$projectdir/gui/gui.js" >> $desktop_file
 echo "Icon=$projectdir/learnwords-96.png" >> $desktop_file
 
 desktop-file-install --dir=$HOME/.local/share/applications $desktop_file
