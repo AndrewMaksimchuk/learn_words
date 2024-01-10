@@ -16,6 +16,7 @@ interface AppBox extends Gtk.Box {
 }
 
 let win: Gtk.Window;
+let titleBar: Gtk.HeaderBar;
 let searchBar: Gtk.SearchBar;
 let buttonSearch: Gtk.ToggleButton;
 
@@ -160,12 +161,13 @@ const dictionaryKeyPressEventCreateHandler = () => {
 };
 
 const dictionaryCreateWin = () => {
+  titleBar = createTitleBar();
   win = new Gtk.Window({
     default_width: DEFAULT_WIDTH,
     default_height: DEFAULT_HEIGHT,
   });
   win.set_title(TITLE_DICTIONARY);
-  win.set_titlebar(createTitleBar());
+  win.set_titlebar(titleBar);
   win.connect("key-press-event", dictionaryKeyPressEventCreateHandler());
 
   const table = new Gtk.ListBox();
@@ -179,6 +181,7 @@ const dictionaryCreateWin = () => {
   scrolledWindow.add(table);
 
   const dict = readDictionary();
+  titleBar.set_subtitle(`contains ${dict.length} words`);
   dict.forEach((element) => {
     table.prepend(createRow(element));
   });
