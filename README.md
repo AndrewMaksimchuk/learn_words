@@ -84,11 +84,12 @@ For build local gui app, run command `npm run tsc`
 
 #### GUI Resources
 
-- https://gjs.guide/guides/
-- https://gjs-docs.gnome.org/gtk30~3.0/
-- https://gjs-docs.gnome.org/gio20~2.0/gio.file
-- https://rmnvgr.gitlab.io/gtk4-gjs-book/application/
-- https://gitlab.gnome.org/GNOME/gjs/tree/HEAD/examples
-- https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions/-/tree/eb2a87a25c5e2fb580b605fbec0bd312fe34c492
-- https://gitlab.gnome.org/World/vocalis
-- https://zetcode.com/gui/gtk2/gtkevents/
+- [Examples](https://github.com/cinatic/gjs-examples/blob/master/README.md)
+- [GJS examples](https://gitlab.gnome.org/GNOME/gjs/tree/HEAD/examples)
+- [gjs.guide/guides](https://gjs.guide/guides/)
+- [gjs-docs.gnome.org/gtk30~3.0](https://gjs-docs.gnome.org/gtk30~3.0/)
+- [gjs-docs.gnome.org/gio20~2.0/gio.file](https://gjs-docs.gnome.org/gio20~2.0/gio.file)
+- [gtk4-gjs-book](https://rmnvgr.gitlab.io/gtk4-gjs-book/application/)
+- [gi-typescript-definitions](https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions/-/tree/eb2a87a25c5e2fb580b605fbec0bd312fe34c492)
+- [Typescript application](https://gitlab.gnome.org/World/vocalis)
+- [gui/gtk2/gtkevents](https://zetcode.com/gui/gtk2/gtkevents/)
