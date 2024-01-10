@@ -5,6 +5,7 @@
   "scripts": {
     "tsc": "tsc --strict --noEmitOnError",
     "rm": "rm -f ./gui/**/*.js ./gui/*.js",
-    "open": "chmod +x ./gui/gui.js && ./gui/gui.js"
+    "open": "chmod +x ./gui/gui.js && ./gui/gui.js",
+    "dev": "npm run tsc && npm run open"
   }
 }

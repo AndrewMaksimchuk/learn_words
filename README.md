@@ -93,3 +93,4 @@ For build local gui app, run command `npm run tsc`
 - [gi-typescript-definitions](https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions/-/tree/eb2a87a25c5e2fb580b605fbec0bd312fe34c492)
 - [Typescript application](https://gitlab.gnome.org/World/vocalis)
 - [gui/gtk2/gtkevents](https://zetcode.com/gui/gtk2/gtkevents/)
+- [gdk/gdkkeysyms.h](https://gitlab.gnome.org/GNOME/gtk/-/blob/main/gdk/gdkkeysyms.h?ref_type=heads)
