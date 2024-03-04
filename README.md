@@ -45,6 +45,7 @@ homogeneous [ˌhōməˈjēnēəs] однорідний
 
 ### Commands  
 
+`check` - check if word exist in dictionary  
 `run` - run application in background.    
 `update` - get "words" file content and add to  
 "dictionary.json" file with transformation that  
@@ -81,6 +82,7 @@ For build local gui app, run command `npm run tsc`
 - GJS
 - Node.js
 - typescript(tsc)
+- jq
 
 #### GUI Resources
 

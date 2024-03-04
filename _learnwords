@@ -9,5 +9,6 @@ subcmds=(
     'open:Run gui' 
     'add:Open editor with "words" file' 
     'build:Build GUI application'
+    'check:Check if word exist in dictionary'
 )
 _describe 'command' subcmds

@@ -41,6 +41,10 @@ case $1 in
         vi $dir/words
     ;;
 
+    "check")
+        "$dir/check.bash" "$2"
+    ;;
+
     *) 
         echo "That command not exist"
     ;; 
