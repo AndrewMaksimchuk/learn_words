@@ -31,12 +31,16 @@ Or run from desktop menu.
 ### words - csv format  
 
 Column name: "summary body"
+
+#### Example
+
 ```
 thing річ
 entirely повністю
 afterwards згодом
 homogeneous [ˌhōməˈjēnēəs] однорідний
 ```
+
 |summary   |body    |
 |----------|--------|
 |thing     |річ     |
@@ -45,12 +49,14 @@ homogeneous [ˌhōməˈjēnēəs] однорідний
 
 ### Commands  
 
-`check` - check if word exist in dictionary  
 `run` - run application in background.    
 `update` - get "words" file content and add to  
 "dictionary.json" file with transformation that  
 needed.  
 `open` - run gui  
+`build` - build gui application
+`add` - open `words` file in `vi` editor for manual write words
+`check` - check if word exist in dictionary  
 
 `./learn_words.bash &` - run application in  
 background process. Application repeat each 5  
