@@ -32,6 +32,12 @@ case $1 in
     ;;
 
     "build")
+        if [[ ! -x "$dir/node_modules/.bin/tsc" ]]; then
+          echo '[ Missing dependency ] Need install typescript'
+          echo '[ Installing ] ...'
+          $(cd $dir && npm install)
+        fi
+
         echo 'Build gui application...'
         $(cd $dir && npm run tsc) 2>/dev/null
         echo 'Done'

@@ -30,7 +30,7 @@ function addcompletion() {
 
 
 function gui_build() {
-    $(cd $cwd && npm run tsc) 2>/dev/null
+    $(cd $cwd && npm install && npm run tsc) 2>/dev/null
 }
 
 
