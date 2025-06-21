@@ -7,10 +7,10 @@ if [[ -z $1 ]]; then
     exit
 fi
 
-words=$(jq '.[] | .summary' "$dir/dictionary.json" | grep "$1" | sort | tr -d '"')
+words=$(jq '.[] | "\(.summary): \(.body)"' "$dir/dictionary.json" | grep "$1" | sort | tr -d '"')
 
 if [[ -z $words ]]; then
-    echo "Your word '$1' not contain in dictionary"
+    echo "Your word \"$1\" not contain in dictionary"
     exit
 fi
 
